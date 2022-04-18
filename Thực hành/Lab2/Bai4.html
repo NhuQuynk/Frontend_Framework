@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Nhập lương tháng 12
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">NHẬP LƯƠNG THÁNG 12</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <div class="mt-3">
+                                        <input type="text" class="form-control" name="ma_NV" id="ma_NV"
+                                            placeholder="Mã nhân viên">
+                                    </div>
+                                    <!-- -- -->
+
+                                    <div class="mt-3">
+                                        <select class="form-select" name="CLB" id="CLB">
+                                            <option value="DN">Đà Nẵng</option>
+                                            <option value="DN">Hà Nội</option>
+                                            <option value="DN">TP HCM</option>
+                                        </select>
+                                    </div>
+                                    <!-- -- -->
+                                    <div class="mt-3">
+                                        <input type="text" class="form-control" name="ma_NV" id="ma_NV"
+                                            placeholder="Thưởng">
+                                    </div>
+                                </div>
+                                <!-- --------------------------------- -->
+                                <div class="col-6">
+                                    <div class="mt-3">
+                                        <input type="text" class="form-control" name="ma_NV" id="ma_NV"
+                                            placeholder="Họ và tên">
+                                    </div>
+                                    <!-- -- -->
+                                    <div class="mt-3">
+                                        <input type="text" class="form-control" name="ma_NV" id="ma_NV"
+                                            placeholder="Lương">
+                                    </div>
+                                    <!-- -- -->
+                                    <div class="mt-3">
+                                        <input type="text" class="form-control" name="ma_NV" id="ma_NV"
+                                            placeholder="Phụ cấp">
+                                    </div>
+                                </div>
+                                <!-- --------------------------------- -->
+                                <div class="col mt-3">
+                                    <textarea name="ghi_chu" id="ghi_chu" cols="20" rows="0" class="form-control"
+                                        placeholder="Ghi chú"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn ">
+                            <i class="fas fa-download"></i>
+                            Lưu
+                        </button>
+                        <button type="button" class="btn " data-bs-dismiss="modal">
+                            <i class="fas fa-stop"></i>
+                            Hủy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------ -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

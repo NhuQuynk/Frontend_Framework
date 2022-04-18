@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Collapse me!
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Some placeholder content for the collapse component. 
+          This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div> -->
+    <!-- --------------------------------- -->
+    <div class="container">
+        <nav class="row text">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark col">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-home"></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-list"></i>
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-phone"></i>
+                                Liên hệ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-envelope"></i>
+                                Góp ý
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-question-circle"></i>
+                                Hỏi đáp
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                Tài khoản
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                                <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                                <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                                <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                                <li><a class="dropdown-item" href="#">Cập nhật hồ sơ</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Đơn hàng</a></li>
+                                <li><a class="dropdown-item" href="#">Hàng đã mua</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Tiếng Việt</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+        <!-- ---------------- -->
+        <div class="row mt-3">
+            <!-- PHẦN ARTICLE -->
+            <article class="col-sm-9 bg-light p-3">
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Collapse me!
+                          </button>
+                          <!-- Modal creat -->
+                          <div class="modal fade" id="modal_create" tabindex="-1" aria-hidden="true">
+
+                          </div>
+                          <!-- End Modal Ceate -->       
+                    </div>
+                    <div class="col-6">
+                        <button class="col-3 btn btn-info" data-bs-toggle="collapse" data-bs-target="#tbl_sv">Mở rộng</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="table-responsive p-0 collapse" id="tbl_sv">
+
+                    </div>
+                </div>
+            </article>
+            <!-- PHẦN ASSIDE  -->
+            <aside class="col-sm-3 bg-light p-3 ">
+                <div class="shop-cart p-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="images/shoppingcart.gif" class="img-fluid">
+                                </div>
+                                <ul class="col-7">
+                                    <li>100 Items</li>
+                                    <li>200,000 VNĐ</li>
+                                    <li><a href="#">View Cart</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- --------- -->
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <form action="">
+                                <input type="text" class="form-control" placeholder="KeyWords">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ------ -->
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <i class="fas fa-list"></i>
+                            Chủng loại
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="#">Nokia</a></li>
+                            <li class="list-group-item"><a href="#">SamSung</a></li>
+                            <li class="list-group-item"><a href="#">Oppo</a></li>
+                            <li class="list-group-item"><a href="#">Apple</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!--  -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

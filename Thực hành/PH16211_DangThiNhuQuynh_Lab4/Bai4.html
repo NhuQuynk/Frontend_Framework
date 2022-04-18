@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="calcular_app">
+    <div class="container" ng-controller="calcular_controller">
+        <form>
+            <div class="row">
+                <div class="form-group">
+                    <label for="CD">
+                        <h6>Chiều dài</h6>
+                    </label>
+                    <input ng-model="chieudai" type="text" class="form-control" id="CD">
+                </div>
+                <!--  -->
+                <div class="form-group">
+                    <label for="CR">
+                        <h6>Chiều rộng</h6>
+                    </label>
+                    <input ng-model="chieurong" type="text" class="form-control" id="CR">
+                </div>
+                <!--  -->
+                <div class="form-group">
+                    <label for="DT" >
+                        <h6>Diện tích</h6>
+                    </label>
+                    <!-- <label ng-bind="dientich" class="form-control" ></label> -->
+                    <input ng-model="dientich" type="text" class="form-control" id="DT">
+                </div>
+                <!--  -->
+                <div class="form-group">
+                    <label for="CV">
+                        <h6>Chu vi</h6>
+                    </label>
+                    <!-- <label ng-bind="chuvi" class="form-control" ></label> -->
+                    <input ng-model="chuvi" type="text" class="form-control" id="CV">
+                </div>
+                <!--  -->
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary mt-4" ng-click="calculate()">
+                        Calcular
+                    </button>
+                </div>
+        </form>
+    </div>
+    </div>
+    <!-- AngularJs -->
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("calcular_app", []);
+        app.controller("calcular_controller", function ($scope) {
+            $scope.calculate = function () {
+                let a = parseFloat($scope.chieudai);
+                let b = parseFloat($scope.chieurong);
+                $scope.dientich = a * b;
+                $scope.chuvi = (a + b) * 2;
+            }
+        })
+    </script>
+    <!-- ------ -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

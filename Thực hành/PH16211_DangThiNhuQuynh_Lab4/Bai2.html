@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body ng-app="bai1_app">
+    <div ng-controller="info_controller">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="images/20.jpg" alt="" width="400px">
+            </div>
+            <div class="col-sm-6">
+                <h3>{{ student.tieuDe }}</h3>
+                <ul>
+                    <li>FullName: {{ student.ten }}</li>
+                    <li>Age: {{ student.Tuoi }}</li>
+                    <li>Gender: {{ student.GioiTinh }}</li>
+                    <li>Mark: {{ student.Diem }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("bai1_app", []);
+        app.controller("info_controller", function ($scope) {
+            $scope.student = {
+                tieuDe: "THÔNG TIN SINH VIÊN",
+                ten: "Đặng Thị Như Quỳnh",
+                Tuoi: "6/12/2002",
+                GioiTinh: "Nữ",
+                Diem: 10
+            }
+        })
+    </script>
+</body>
+
+</html>

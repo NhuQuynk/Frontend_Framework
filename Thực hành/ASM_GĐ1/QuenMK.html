@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+
+<body ng-app="qltk">
+    <div class="container" ng-controller="myctrl" style="text-align: center;">
+        <div class="row pt-5">
+            <div class="card border-dark col-6 offset-3">
+                <a href="Trangchu.html" class="pt-3"><img src="image/screen-6.jpg" alt=""></a>
+                <h5 class="card-header"
+                    style="font-size: x-large; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                    <a href="" style="text-decoration: none; color: black;">QUÊN MẬT KHẨU</a></h5>
+                <div class="card-body">
+                    <form name="form_control">
+                        <div class="mb-3" style="text-align: left;">
+                            <label for="exampleInputAcc1" class="form-label">Tài Khoản</label>
+                            <input type="text" class="form-control" required ng-model="user.username"
+                                id="exampleInputAcc1">
+                        </div>
+                        <div class="mb-3" style="text-align: left;">
+                            <label for="exampleInputPassword1" class="form-label">Email</label>
+                            <input type="email" class="form-control" required ng-model="user.email"
+                                id="exampleInputemail1">
+                            <span id="errorTk" style="color: red;"></span>
+                        </div>
+                        <div class="mb-3 form-check" style="text-align: right;">
+                            <label class="form-check-label" for="exampleCheck1"><a href="Login.html"
+                                    style="text-decoration: none; ">Đăng nhập</a></label>
+                            <label class="form-check-label" for="exampleCheck1"><a href="TrangDangKy.html"
+                                    style="text-decoration: none; ">Đăng kí</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" ng-click="myFun()">Lấy Mật Khẩu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        var app = angular.module("qltk", []);
+        app.controller("myctrl", function ($scope, $http) {
+            $scope.users = [];
+            $scope.myFun = function (users) {
+                $http.get('https://620b0612beee430017f3847f.mockapi.io/Students')
+                    .then(function (response) {
+                        $scope.users = response.data;
+                        console.log(response);
+                        for (var i = 0; i < $scope.users.length; i++) {
+                            if (document.getElementById('exampleInputAcc1').value == $scope.users[i].username ||
+                                document.getElementById('exampleInputEmail1').value == $scope.users[i].email) {
+                                alert("Mật khẩu : " + $scope.users[i].password)
+                                break;
+                            }
+                            else {
+                                errorTk.innerHTML = "Thông tin không chính xác";
+                            }
+                        }
+                    });
+            }
+        });
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

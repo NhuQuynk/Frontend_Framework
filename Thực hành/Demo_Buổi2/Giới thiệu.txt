@@ -1,0 +1,5 @@
+Buổi 2:
+- table
+- Form (text, password, ảnh, year,checkbox,combobox(select)...) bao gồm các txt và lable
+- Giống như giao diện kéo thả javaswing
+- Tab, hộp thoại thông báo

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        input.ng-invalid{
+            background-image: url('fire-2-24.ico');
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+    </style>
+  </head>
+  <body ng-app="myapp" ng-controller="ctrl">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                      THÔNG TIN SINH VIÊN
+                    </div>
+                    <div class="card-body">
+                      <form name="frmsv">
+                          <div class="form-group">
+                            <label> Họ và Tên</label>
+                            <input type="text" name="txtname" ng-model="name" required minlength="5" maxlength="50" class="form-control" placeholder="" aria-describedby="helpId">
+                            <label ng-show="frmsv.txtname.$invalid" class="alert alert-danger">Bạn chưa nhập tên</label>
+                          </div>
+                          <div class="form-group">
+                            <label> Điểm</label>
+                            <input type="number" name="txtmark" ng-model="mark" required min="0" max="10" class="form-control" placeholder="" aria-describedby="helpId">
+                            <label ng-show="frmsv.txtmark.$invalid" class="alert alert-danger">0 < Điểm >10</label>
+                          </div>
+                          <div class="form-group">
+                            <label> Email</label>
+                            <input type="email" name="txtemail" ng-model="email" required  class="form-control" placeholder="" aria-describedby="helpId">
+                            <label ng-show="frmsv.txtemail.$invalid" class="alert alert-danger">Email sai</label>
+                          </div>
+                          <div class="form-group">
+                            <label> Số xe</label>
+                            <input type="text" name="txtsoxe" ng-model="soxe" required pattern="5\d-[A-Z]\d-((\d{4})|(\d{3}\.\d{2}))" class="form-control" placeholder="" aria-describedby="helpId">
+                            <label ng-show="frmsv.txtemail.$invalid" class="alert alert-danger">Số xe sai định dạng</label>
+                          </div>
+                      </form>
+                      
+                      <!-- <button type="button" class="btn btn-primary">Lưu</button> -->
+                                             
+                    </div>
+                    <div class="card-footer" >
+                        <button type="button" class="btn btn-success">Success</button>
+                        <label ng-if="frmsv.$valid" class="alert alert-success">Chúc mừng bạn đã nhập đúng</label>
+                    </div>
+                  </div>
+                   
+              </div>
+          </div>
+      </div>
+      <script>
+          var app = angular.module("myapp",[]);
+          app.controller("ctrl", function($scope){
+
+          });
+
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app= "bang_app">
+    <div class="container mt-3" ng-controller= "bang_controller">
+        <table class="table table-bordered ">
+            <tr class="text-center">
+                <th>Hình</th>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Điểm</th>
+            </tr>
+            <tr>
+                <td><img src="images/{{ info[0].photo }}" width="100px"></td>
+                <td>{{ info[0].ten }}</td>
+                <td>{{ info[0].tuoi }}</td>
+                <td>{{ info[0].gender }}</td>
+                <td>{{ info[0].diem }}</td>
+            </tr>
+            <tr>
+                <td><img src="images/{{ info[1].photo }}" width="100px"></td>
+                <td>{{ info[1].ten }}</td>
+                <td>{{ info[1].tuoi }}</td>
+                <td>{{ info[1].gender }}</td>
+                <td>{{ info[1].diem }}</td>
+            </tr>
+            <tr>
+                <td><img src="images/{{ info[2].photo }}" width="100px"></td>
+                <td>{{ info[2].ten }}</td>
+                <td>{{ info[2].tuoi }}</td>
+                <td>{{ info[2].gender }}</td>
+                <td>{{ info[2].diem }}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("bang_app", []);
+        app.controller("bang_controller", function($scope){
+            $scope.info = [
+                {
+                    photo: "20.jpg",
+                    ten: "Nguyễn Thị A",
+                    tuoi: "6/6/2002",
+                    gender: "Nữ",
+                    diem: 5.5
+                },
+                {
+                    photo: "20.jpg",
+                    ten: "Nguyễn Văn B",
+                    tuoi: "12/6/2002",
+                    gender: "Nam",
+                    diem: 8.5
+                },
+                {
+                    photo: "20.jpg",
+                    ten: "Nguyễn Văn C",
+                    tuoi: "12/6/2002",
+                    gender: "Nam",
+                    diem: 9.5
+                }
+            ]
+        })
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

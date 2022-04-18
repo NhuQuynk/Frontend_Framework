@@ -1,0 +1,10 @@
+BÀI 6: FORM & VALIDATION			@ng-options:
+1. Làm việc với form
+ @ng-model
+   - input[ text ] @ng-model-options
+   - input[ radio | checkbox]
+   - select @ng-options
+2. Validation
+- Validate cơ bản
+- Các trạng thái lỗi
+- Tùy biến lỗi

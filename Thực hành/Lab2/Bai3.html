@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">
+                    <i class="fas fa-edit"></i>
+                    Cập nhật
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">
+                    <i class="fas fa-list"></i>
+                    Danh sách
+                </button>
+            </li>
+        </ul>
+        <!-- Tab cập nhật -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <form action="">
+                    <div class="row mt-2">
+                        <div class="col-6">
+                            <div class="col-3">
+                                <label for="ma_NV">
+                                    <h6>
+                                        Mã Nhân Viên
+                                        <span class="text-danger">*</span>
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="ma_NV" id="ma_NV">
+                            </div>
+                            <!-- -- -->
+                            <div class="col-2 mt-3">
+                                <label for="ten_CLB">
+                                    <h6>
+                                        Câu Lạc Bộ
+                                        <span class="text-danger">*</span>
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select" name="CLB" id="CLB">
+                                    <option value="DN">Đà Nẵng</option>
+                                    <option value="DN">Hà Nội</option>
+                                    <option value="DN">TP HCM</option>
+                                </select>
+                            </div>
+                            <!-- -- -->
+                            <div class="col-2 mt-3">
+                                <label for="thuong">
+                                    <h6>
+                                        Thưởng
+                                    <span class="text-danger">*</span>
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="thuong" id="thuong">
+                            </div>
+                        </div>
+                        <!-- --------------------------------- -->
+                        <div class="col-6">
+                            <div class="col-2">
+                                <label for="ma_NV">
+                                    <h6>
+                                        Họ Và Tên
+                                        <span class="text-danger">*</span>
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="ma_NV" id="ma_NV">
+                            </div>
+                            <!-- -- -->
+                            <div class="col-2 mt-3">
+                                <label for="ma_NV">
+                                    <h6>
+                                        Lương
+                                        <span class="text-danger">*</span>
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="ma_NV" id="ma_NV">
+                            </div>
+                            <!-- -- -->
+                            <div class="col-2 mt-3">
+                                <label for="ma_NV">
+                                    <h6>
+                                        Phụ Cấp
+                                        <span class="text-danger">*</span>
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="ma_NV" id="ma_NV">
+                            </div>
+                        </div>
+                        <!-- --------------------------------- -->
+                        <div class="col">
+                            <div class="col-2 mt-3">
+                                <label for="ghi_chu">
+                                    <h6>Ghi Chú</h6>
+                                </label>
+                            </div>
+                            <textarea name="ghi_chu" id="ghi_chu" cols="20" rows="0" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <button class="btn  btn-light col-1">
+                            <i class="fas fa-download"></i>
+                            <span>Lưu</span>
+                        </button>
+                        <button class="btn btn-light col-1">
+                            <i class="fas fa-stop"></i>
+                            <span>Hủy</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- Tab danh sách -->
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="table-responsive p-0">
+                    <table class="table table-bordered table-hover ">
+                        <thead>
+                            <tr class="text-center table-warning">
+                                <th rowspan="2" class="align-middle">MÃ NV</th>
+                                <th rowspan="2" class="align-middle">HỌ VÀ TÊN</th>
+                                <th colspan="3">THU NHẬP</th>
+                            </tr>
+                            <tr class="text-center table-warning">
+                                <th class="align-middle">LƯƠNG</th>
+                                <th class="align-middle">THƯỞNG</th>
+                                <th class="align-middle">PHỤ CẤP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NV100</td>
+                                <td>Nguyễn Công Phượng</td>
+                                <td>5000000</td>
+                                <td>500000</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>NV102</td>
+                                <td>Phan Văn Tài Em</td>
+                                <td>9000000</td>
+                                <td>600000</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <td>NV103</td>
+                                <td>Lê Huỳnh Đức</td>
+                                <td>7000000</td>
+                                <td>300000</td>
+                                <td>200000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

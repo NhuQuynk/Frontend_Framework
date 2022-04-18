@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="lab5_bai1">
+    <div>
+        <!-- Form -->
+        <div ng-controller="form_controller" class="col-8 offset-2 ">
+            <form action="" method="">
+                <div class="mt-3 row">
+                    <label class="col-2" for="fullname">
+                        <h6>Họ tên<span class="text-danger">*</span></h6>
+                    </label>
+                    <div class="col-12">
+                        <input ng-model="$parent.student.fullname" type="text" class="form-control col-10"
+                            name="fullname" id="fullname">
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label class="col-2" for="birthday">
+                        <h6>Ngày sinh<span class="text-danger">*</span></h6>
+                    </label>
+                    <div class="col-12">
+                        <input ng-model="$parent.student.birthday" type="text" class="form-control col-10"
+                            name="birthday" id="birthday">
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label class="col-2" for="diem">
+                        <h6>Điểm<span class="text-danger">*</span></h6>
+                    </label>
+                    <div class="col-12">
+                        <input ng-model="$parent.student.mark" type="text" class="form-control col-10" name="diem"
+                            id="diem">
+                    </div>
+                </div>
+                <div class="mt-3 ">
+                    <button ng-click="save()"   class="btn btn-primary" type="button">Thêm</button>
+                    <button ng-click="cancel()" class="btn btn-primary" type="button">Hủy</button>
+                    <button ng-click="clear()"  class="btn btn-primary" type="button">Mới</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Table -->
+        <div ng-controller="table_controller" class="col-8 offset-2 mt-5">
+            <div class="table-responsive" id="tbl_sv">
+                <table class="table table-striped text-nowrap">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Họ tên</th>
+                            <th scope="col">Ngày sinh</th>
+                            <th scope="col">Điểm</th>
+                            <th scope="col">Xếp loại</th>
+                            <th scope="col" colspan="2">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sv in $parent.students">
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ sv.fullname }}</td>
+                            <td>{{ sv.birthday }}</td>
+                            <td>{{ sv.mark }}</td>
+                            <td>
+                                <span ng-if="sv.mark >= 8">Giỏi/Xuất sắc</span>
+                                <span ng-if="sv.mark < 8 && sv.mark >=5">Trung bình/Khá</span>
+                                <span ng-if="sv.mark < 5">Yếu/Kém</span>
+                            </td>
+                            <td>
+                                <button ng-click="edit( $index )" class="btn btn-primary">Sửa</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#modal_delete_1">Xóa</button>
+                                <div class="modal fade" id="modal_delete_1" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Xác nhận xóa?</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Bạn muốn xóa sinh viên này?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Đóng
+                                                </button>
+                                                <button type="button" class="btn btn-danger">Xác nhận</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("lab5_bai1", []);
+        // Form controller
+        const formController = function ($scope) {
+            $scope.$parent.student = {};
+            // Thêm
+            $scope.save = function () {
+                $scope.$parent.students.push(angular.copy($scope.$parent.student))
+            }
+            // Hủy
+            $scope.cancel = function () {
+                if ($scope.index == -1) {
+                    $scope.clear();
+                } else {
+                    $scope.edit($scope.index);
+                }
+            }
+            // Mới
+            $scope.clear = function () {
+                $scope.$parent.student = {};
+            }
+        }
+        // Table controller
+        const tableController = function ($scope) {
+            $scope.$parent.students = [
+                {
+                    fullname: "Đặng Thị Như Quỳnh",
+                    birthday: "06/12/2002",
+                    mark: 10,
+                },
+                {
+                    fullname: "Nguyễn Đặng Bảo Ngọc",
+                    birthday: "01/02/1999",
+                    mark: 8,
+                },
+                {
+                    fullname: "Nguyễn Văn Chiến",
+                    birthday: "11/10/1999",
+                    mark: 4,
+                },
+                {
+                    fullname: "Mai Hồng Ngọc",
+                    birthday: "02/06/1998",
+                    mark: 7,
+                },
+                {
+                    fullname: "Bùi Hà Anh",
+                    birthday: "09/06/2000",
+                    mark: 8,
+                }
+            ];
+
+            // hàm edit
+            $scope.edit = function (index) {
+                $scope.$parent.index = index;
+                $scope.$parent.student = angular.copy($scope.$parent.students[index]);
+            }
+        }
+
+        app.controller("form_controller", formController);
+        app.controller("table_controller", tableController);
+    </script>
+</body>
+<!-- ------------------------------- -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

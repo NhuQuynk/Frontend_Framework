@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body ng-app="demo_route">
+    <ul>
+        <li><a href="#blue">Blue</a></li>
+        <li><a href="#red">Red</a></li>
+        <li><a href="#green">Green</a></li>
+    </ul>
+    <div ng-view></div>
+    <script src="js/angularjs.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script>
+        const app = angularJs.module("demo_route", ["ngRoute"]);
+
+        app.config(function ($routeProvider, $locationProvider){
+            $locationProvider.hashPrefix('');
+            $routeProvider
+                .when("/blue", {
+                    template: '<div style="background-color: blue">Blue</div>'
+                })
+                .when("/red", {
+                    template: '<div style="background-color: red">Red</div>'
+                })
+                .when("/green", {
+                    template: '<div style="background-color: green">Green</div>'
+                })
+        });
+    </script>
+</body>
+</html>

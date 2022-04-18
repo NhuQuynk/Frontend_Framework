@@ -1,0 +1,22 @@
+Bài 5:
+- Tìm hiểu $scope
+- Tìm hiểu các chỉ thị: ng-if, ng-switch, ng-repeat...
+- Hiển thị danh sách lên table
+________________________________________________________________
+$scope:
+- 1 app AngularJs có thể có nhiều controller
+ Mỗi controller có 1 $scope riêng. Các $scope có phạm vi truy xuất khác nhau
+=> Không đucợ truy xuất thuộc tính của $scope khác
+- Có 2 cách để $scope con truy xuất tới $scope cha:
+ truy xuất trực tiếp hoặc sử dụng parent
+- $scope cha ko được phép truy xuất tới $scope con
+- $rootScope thuộc về thành phần có ng-app
+=> chia sẻ dữ liệu trong toàn app.
+_________________________________________________________________
+Các chỉ thị <directive> cơ bản: ng-controller, ng-model, ng-bind, ng-click,
+ng-change, ng-button, ...
+ng-show/ng-hide: Hiện, ẩn
+ng-init
+ng-if
+ng-switch
+ng-repeat: lặp và lấy ra từng phần tử array

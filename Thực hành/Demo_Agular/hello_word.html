@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Word</title>
+
+</head>
+<body ng-app="hello_word_app">  <!--B2: khai báo...-->
+    <div ng-controller="hello_controller">
+        <h3>{{ message }}</h3>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script>
+        //B1: Tạo 1 UD AngularJs
+        const app = angular.module("hello_word_app", []);
+
+        //B2: Khai báo phạm vi hoạt động của UD AngularJs: ng-app
+        //B3: Tạo function để xử lý:
+        function sayHello($scope){
+            $scope.message = "Hello word"
+        }
+
+        //B4: Khai báo controller với AngularJs
+        app.controller("hello_controller", sayHello)
+    </script>
+</body>
+</html>

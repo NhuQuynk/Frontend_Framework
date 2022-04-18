@@ -1,0 +1,7 @@
+- carosel: giống như slideshow
+- collapse: khi click vào button nó sẽ thay đổi đoạn văn bản bên dưới
+- pagination: phân trang 1 2 3 ..., trang sau, trang trước
+- alert: hiển thị thông báo 
+	+Toast: Giống như hiển thị tin nhắn
+	+Badge: Hiển thị hộp thư đến có bnhieu tin nhắn
+- 

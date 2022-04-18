@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+
+</head>
+
+<body ng-app="Bai5_Lab5">
+    <div class="container" ng-controller="proCtrl">
+        <div class="row text-center">
+            <div class="col-sm-3 mt-3" ng-repeat="p in list_product">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        {{p.name}}
+                    </div>
+                    <div class="card-body">
+                        <img src="images/{{p.photo}}" width="250px" height="230px" alt="">
+                    </div>
+                    <div class="card-footer">
+                        {{p.price}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -------------- -->
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("Bai5_Lab5", []);
+        app.controller("proCtrl", function ($scope) {
+            $scope.list_product = [
+                {
+                    name: "Đồng hồ Thụy Sĩ",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Thụy Điển",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Anh",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Mĩ",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Việt Nam",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Thái Lan",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Nhật Bản",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+                {
+                    name: "Đồng hồ Trung Quốc",
+                    photo: "clock.jpg",
+                    price: $1200
+                },
+            ]
+        });
+    </script>
+</body>
+
+</html>
